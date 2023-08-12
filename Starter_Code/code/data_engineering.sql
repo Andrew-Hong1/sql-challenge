@@ -23,14 +23,14 @@ CREATE TABLE employees (
 CREATE TABLE dept_emp (
 	emp_no int NOT null,
 	FOREIGN KEY (emp_no) REFERENCES employees(emp_no),
-	dept_no varchar,
+	dept_no varchar NOT NULL
 	FOREIGN KEY (dept_no) REFERENCES departments(dept_no)
 );
 
 CREATE TABLE dept_manager (
 	dept_no varchar NOT null,
 	FOREIGN KEY (dept_no) REFERENCES departments (dept_no),
-	emp_no int not null,
+	emp_no int NOT null,
 	FOREIGN KEY (emp_no) REFERENCES employees(emp_no)
 );
 
@@ -39,3 +39,5 @@ CREATE TABLE salaries (
 	FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
 	salary int NOT null
 );
+
+select * from titles
